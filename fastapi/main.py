@@ -11,22 +11,11 @@ def read_root():
     return {"Hello": "World"}
 """
 
-@app.get('/ping', response_class=PlainTextResponse)
-async def ping():
-    return 'pong'
 
-
-@app.get('/info', response_class=JSONResponse)
-async def info(request: Request):
-    return {
-        "method": request.method,
-        'url': str(request.url),
-        'protocol': request.scope['type'],
-    }
     
     
 @app.get('/', response_class=JSONResponse)
-async def message():
+async def hello():
     return {'message': "Hello, nfactorial!",}
 
 
